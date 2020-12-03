@@ -1,0 +1,34 @@
+use bigcursos;
+
+INSERT INTO usuario (nome, dt_nasc, sexo, cpf, tipo_usuario, num_telefone, email, senha) values (
+	'Diego Becker',
+	20000806,
+	'M',
+	'03867444080',
+	'adm',
+	'49989266636',
+	'diegoluizbecker@gmail.com',
+	'qwe1234'
+);
+
+INSERT INTO usuario (nome, dt_nasc, sexo, cpf, tipo_usuario, num_telefone, email, senha) values (
+	'Diego Becker',
+	20000806,
+	'M',
+	'03867444080',
+	'adm',
+	'49989266636',
+	'diegoluizbecker@gmail.com',
+	'qwe1234'
+);
+
+INSERT INTO usuario (nome, dt_nasc, sexo, cpf, tipo_usuario, num_telefone, email, senha) values (
+	'Diego Becker',
+	20000806,
+	'M',
+	'03867444080',
+	'adm',
+	'49989266636',
+	'diegoluizbecker@gmail.com',
+	'qwe1234'
+);
