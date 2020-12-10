@@ -90,10 +90,6 @@ CREATE TABLE LOCAL_CURSO (
     fk_codturma varchar(10)
 );
 
-ALTER TABLE ENDEREÇO ADD CONSTRAINT FK_ENDEREÇO_2
-    FOREIGN KEY (fk_matricula)
-    REFERENCES ALUNO (matricula);
-
 ALTER TABLE ALUNO_CURSO ADD CONSTRAINT fk_aluno_alunocurso
     FOREIGN KEY (fk_matricula)
     REFERENCES ALUNO (matricula);
