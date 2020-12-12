@@ -38,10 +38,8 @@ html {
   font-size: 20px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+footer { 
+  
 }
 
 /*Chamada.php*/
@@ -82,7 +80,6 @@ th {
 
 .lista {
   list-style-type: none;
-  display: inline-block;
   padding-inline-start: 0px;
   border: 2px solid black;
 }
@@ -97,4 +94,26 @@ th {
   padding: 10px;
   background-color: #343a40;
   border-bottom: 2px solid black;
+}
+
+#menu{
+  display: inline-block;
+  border: 2px solid red;
+}
+
+#cadastro-form{
+  border: 2px solid red;
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  height: 300px;
+  width: 500px;
+  left: 35%;
+  top: 30%;
+}
+
+.txt-cad{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
 }

@@ -6,13 +6,16 @@
 	$senha = $_POST['senha'];
 
     if ($email != '' && $senha != ''){
-        $query = "SELECT email, senha, tipo_usuario from usuario where email='$email' AND senha='$senha'";
-        $stmt = $conexao->query($query);
-        $lista = $stmt->fetchAll();
-        if($email == $lista[0]['email'] && $senha == $lista[0]['senha'])
+        $query = "SELECT email, senha, tipo_usuario from usuario where email= :email AND senha=:senha";
+        $stmt = $conexao->prepare($query);
+        $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':senha', $senha);
+        $stmt->execute();
+        $lista = $stmt->fetch();
+        if($email == $lista['email'] && $senha == $lista['senha'])
         {
             $_SESSION['autenticado'] = "SIM";
-            $_SESSION['user'] = $lista[0]['tipo_usuario'];
+            $_SESSION['user'] = $lista['tipo_usuario'];
             
             switch($_SESSION['user']){
                 case 'adm':
