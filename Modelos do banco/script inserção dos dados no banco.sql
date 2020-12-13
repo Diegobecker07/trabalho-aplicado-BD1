@@ -182,7 +182,7 @@ INSERT INTO aluno(cpf, Nome, dt_nasc, sexo) VALUES (
 	'F'
 );
 
-INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
+INSERT INTO endereco (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
 	'SP',
 	'São Paulo',
 	'Centro',
@@ -192,7 +192,7 @@ INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, 
 	1
 );
 
-INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
+INSERT INTO endereco (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
 	'RJ',
 	'Rio de Janeiro',
 	'Bela Vista',
@@ -202,7 +202,7 @@ INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, 
 	2
 );
 
-INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
+INSERT INTO endereco (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
 	'MT',
 	'Mato grosso',
 	'Bela Vista',
@@ -212,7 +212,7 @@ INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, 
 	3
 );
 
-INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
+INSERT INTO endereco (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
 	'SC',
 	'Chapecó',
 	'Centro',
@@ -222,7 +222,7 @@ INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, 
 	4
 );
 
-INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
+INSERT INTO endereco (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
 	'SC',
 	'Chapecó',
 	'Efapi',
@@ -232,7 +232,7 @@ INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, 
 	5
 );
 
-INSERT INTO endereço (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
+INSERT INTO endereco (estado, cidade, bairro, logradouro, numero, complemento, fk_matricula) VALUES (
 	'SC',
 	'Chapecó',
 	'Bela Vista',
