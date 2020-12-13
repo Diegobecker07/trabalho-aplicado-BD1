@@ -63,7 +63,7 @@ CREATE TABLE CHAMADA (
 );
 
 CREATE TABLE CERTIFICADO (
-    id_certificado int PRIMARY KEY,
+    id_certificado int auto_increment PRIMARY KEY,
     fk_id_aluno_curso int,
     apto enum('1', '0') not null
 );
