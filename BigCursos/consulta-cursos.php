@@ -15,6 +15,42 @@
     </div>
 </div>
 
+<div id="consulta">
+    <h1> Cursos cadastrados</h1>
+    <table id="cursos-cad">
+        <tr>
+            <th>
+                Nome do curso
+            </th>
+            <th>
+                Modalidade
+            </th>
+            <th>
+                Carga Horária
+            </th>
+        </tr>
+            <?php 
+                require_once "conexao.php";
+                $query = "SELECT * from curso";
+                $stmt = $conexao->prepare($query);
+                $stmt->execute();
+                $lista = $stmt->fetchAll();
+                foreach($lista as $key => $value){?>
+                    <tr>
+                        <td>
+                            <?php echo $value['nome']?>
+                        </td>
+                        <td>
+                            <?php echo $value['modalidade']?>
+                        </td>
+                        <td>
+                            <?php echo $value['carga_horaria']?>
+                        </td>
+                    </tr>
+            <?php } ?>
+    </table>
+</div>
+
 <?php 
     require_once "includes/menu-adm.php";
 ?>
