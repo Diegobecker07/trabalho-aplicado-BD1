@@ -102,42 +102,42 @@ INSERT INTO curso(modalidade, nome, carga_horaria) VALUES (
 	'200000'
 );
 
-INSERT INTO turma(codturma, data_inicio, numvagas, fk_cpf, fk_idcurso, finalizada) VALUES (
-	'EL2020',
-	'2023-12-12',
-	50,
-	'96473645680',
-	2,
-	0
-);
-
-INSERT INTO turma(codturma, data_inicio, numvagas, fk_cpf, fk_idcurso, finalizada) VALUES (
-	'IF2023',
-	'2023-12-12',
-	30,
-	'65837389393',
-	1,
-	0
-);
-
-INSERT INTO local_curso(estado, cidade, bairro, logradouro, numero, complemento, fk_codturma) VALUES (
+INSERT INTO local_curso(estado, cidade, bairro, logradouro, numero, complemento) VALUES (
 	'RS',
 	'Porto Alegre',
 	'Centro',
 	'Rua Frederico',
 	234,
-	'',
-	'EL2020'
+	''
 );
 
-INSERT INTO local_curso(estado, cidade, bairro, logradouro, numero, complemento, fk_codturma) VALUES (
+INSERT INTO local_curso(estado, cidade, bairro, logradouro, numero, complemento) VALUES (
 	'SC',
 	'Chapecó',
 	'Centro',
 	'Rua Fernando Machado',
 	2222,
-	'Ed Eniara',
-	'IF2023'
+	'Ed Eniara'
+);
+
+INSERT INTO turma(codturma, data_inicio, numvagas, fk_cpf, fk_idcurso, finalizada, fk_idlocalcurso) VALUES (
+	'EL2020',
+	'2023-12-12',
+	50,
+	'96473645680',
+	2,
+	0,
+	1
+);
+
+INSERT INTO turma(codturma, data_inicio, numvagas, fk_cpf, fk_idcurso, finalizada, fk_idlocalcurso) VALUES (
+	'IF2023',
+	'2023-12-12',
+	30,
+	'65837389393',
+	1,
+	0,
+	2
 );
 
 INSERT INTO aluno(cpf, Nome, dt_nasc, sexo) VALUES (

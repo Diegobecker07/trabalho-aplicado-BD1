@@ -1,8 +1,12 @@
 drop DATABASE if EXISTS bigcursos;
-create DATABASE bigcursos;
+/* Modelo lógico - Big Cursos: */
+create database bigcursos;
 use bigcursos;
-
-/* Modelo Lógico - Big Cursos: */
+drop DATABASE if EXISTS bigcursos;
+/* Modelo lógico - Big Cursos: */
+create database bigcursos;
+use bigcursos;
+/* Modelo lógico - Big Cursos: */
 
 CREATE TABLE USUARIO (
     nome varchar(50) not null,
@@ -14,18 +18,6 @@ CREATE TABLE USUARIO (
     email varchar(150) not null,
     senha varchar(50) not null
 );
-
-CREATE TABLE ENDERECO (
-    id_endereco int auto_increment PRIMARY KEY,
-    estado char(2),
-    cidade varchar(50),
-    bairro varchar(50),
-    logradouro varchar(50),
-    numero varchar(10),
-    complemento varchar(50),
-    fk_matricula int UNIQUE
-);
-
 
 CREATE TABLE CURSO (
     idcurso int auto_increment PRIMARY KEY,
@@ -40,7 +32,8 @@ CREATE TABLE TURMA (
     numvagas int not null,
     fk_cpf varchar(11),
     fk_idcurso int,
-    finalizada enum('1', '0') not null
+    finalizada enum('1', '0') not null,
+    fk_idlocalcurso int
 );
 
 CREATE TABLE ALUNO (
@@ -76,8 +69,19 @@ CREATE TABLE CHAMADA (
 
 CREATE TABLE CERTIFICADO (
     id_certificado int auto_increment PRIMARY KEY,
-    fk_id_aluno_curso int UNIQUE, 
+    fk_id_aluno_curso int UNIQUE,
     apto enum('1', '0') not null
+);
+
+CREATE TABLE ENDERECO (
+    id_endereco int auto_increment PRIMARY KEY,
+    estado char(2),
+    cidade varchar(50),
+    bairro varchar(50),
+    logradouro varchar(50),
+    numero varchar(10),
+    complemento varchar(50),
+    fk_matricula int UNIQUE
 );
 
 CREATE TABLE LOCAL_CURSO (
@@ -87,14 +91,9 @@ CREATE TABLE LOCAL_CURSO (
     bairro varchar(50) not null,
     logradouro varchar(50) not null,
     numero varchar(10) not null,
-    complemento varchar(150) not null,
-    fk_codturma varchar(10)
+    complemento varchar(150) not null
 );
-
-ALTER TABLE ENDERECO ADD CONSTRAINT fk_aluno_endereco
-    FOREIGN KEY (fk_matricula)
-    REFERENCES ALUNO (matricula);
-
+ 
 ALTER TABLE TURMA ADD CONSTRAINT fk_cpfprof_turma
     FOREIGN KEY (fk_cpf)
     REFERENCES PROFESSOR (cpf);
@@ -102,6 +101,10 @@ ALTER TABLE TURMA ADD CONSTRAINT fk_cpfprof_turma
 ALTER TABLE TURMA ADD CONSTRAINT fk_curso_turma
     FOREIGN KEY (fk_idcurso)
     REFERENCES CURSO (idcurso);
+ 
+ALTER TABLE TURMA ADD CONSTRAINT fk_turma_local
+    FOREIGN KEY (fk_idlocalcurso)
+    REFERENCES LOCAL_CURSO (idlocalcurso);
  
 ALTER TABLE ALUNO_CURSO ADD CONSTRAINT fk_aluno_alunocurso
     FOREIGN KEY (fk_matricula)
@@ -119,6 +122,6 @@ ALTER TABLE CERTIFICADO ADD CONSTRAINT fk_certificado_alunocurso
     FOREIGN KEY (fk_id_aluno_curso)
     REFERENCES ALUNO_CURSO (id_aluno_curso);
  
-ALTER TABLE LOCAL_CURSO ADD CONSTRAINT fk_local_turma
-    FOREIGN KEY (fk_codturma)
-    REFERENCES TURMA (codturma);
+ALTER TABLE ENDERECO ADD CONSTRAINT fk_aluno_endereco
+    FOREIGN KEY (fk_matricula)
+    REFERENCES ALUNO (matricula);
